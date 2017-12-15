@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Foodie.to</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<nav class="navbar navbar-inverse">
+			  <div class="container">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span> 
+			      </button>
+			      <% if(!currentUser) { %>
+					<a class="navbar-brand" href="/">Foodie.to</a>
+			  	  <% } else { %>
+					<a class="navbar-brand" href="/dishes">Foodie.to</a>
+			      <% } %>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right">
+			      	<% if(!currentUser) { %>
+			      		<li><a href="/register"> Sign up </a></li>
+						<li><a href="/login"> Login </a></li>
+			      	<% } else { %>
+			      	 <li><a href="/dishes/new"> Post dish </a></li>
+			      	 <li class="dropdown">
+				        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Welcome back, <%= currentUser.firstName %> <span class="caret"></span></a>
+				        <ul class="dropdown-menu">
+				          <li><a href="#">Settings</a></li>
+				          <li><a href="/logout">Logout</a></li>
+				        </ul>
+				      </li>
+			  		<% } %>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</div>

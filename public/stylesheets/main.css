@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+/*------------
+
+LANDING PAGE
+
+--------------*/
+.landing-page {
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?w=940&h=650&auto=compress&cs=tinysrgb');
+}
+
+.landing-page .navbar-inverse {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.landing-page .navbar {
+	border-radius: 0;
+}
+
+.landing-page .navbar-inverse .navbar-brand, .landing-page .navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	font-family: 'Lobster', cursive;
+}
+
+.landing-page header.jumbotron {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-family: 'Lobster', cursive;
+	background-color: transparent;
+	text-align: center;
+}
+
+.landing-page header.jumbotron button:focus {
+	outline: none;
+}
+
+/*-------------
+
+HEADER-FORM NAV
+
+---------------*/
+
+.header-form .navbar-default {
+	background-color: #c0392b;
+	border-color: #c0392b;
+}
+
+.header-form .navbar {
+	border-radius: 0;
+}
+
+.header-form .navbar-default .navbar-brand {
+	color: #fff;
+	font-family: 'Lobster', cursive;
+}
+
+/*---------
+
+HEADER NAV
+
+-----------*/
+.header .navbar-inverse {
+	background-color: #c0392b;
+	border-color: #c0392b;
+}
+
+.header .navbar {
+	border-radius: 0;
+}
+
+.header .navbar-inverse .navbar-brand {
+	color: #fff;
+	font-family: 'Lobster', cursive;
+}
+
+.header .navbar-inverse .navbar-brand, .header .navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+	font-family: 'Lobster', cursive;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+	background-color: #c0392b;
+}
+
+.dropdown-menu>li>a {
+	font-family: 'Lobster', cursive;
+	color: #c0392b;
+}
+
+.dropdown-menu>li>a:hover {
+	color: #c0392b;
+}
+
+
+/*-------------------
+
+REGISTER/LOGIN/DISH FORM
+
+---------------------*/
+
+#register-form, #login-form {
+	margin: 100px auto;
+}
+
+#dish-form {
+	margin: 80px auto;
+}
+
+#register-form h3, #login-form h3, #dish-form h3 {
+	font-family: 'Lobster', cursive;
+	color: #c0392b;
+}
+
+#register-form, #dish-form {
+	width: 35vw;
+}
+
+#login-form {
+	width: 25vw;
+}
+
+#dish-form textarea {
+	resize: none;
+}
+
+/*----
+
+INDEX
+
+------*/
+
+.dish-figure img {
+	width: 100%;
+}
+
+.col-md-4 .panel-col {
+	background-color: red !important;
+}
+
+

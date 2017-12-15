@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+	  <div class="container">
+ 
+	  	<h1 style="font-family:'Lobster', cursive;color: #c0392b"> The Foodie Collection </h1>
+	  	<hr/>
+
+	  	<div class="row" style="display:flex; flex-wrap: wrap">
+	  		<% allDishes.forEach(function(dish) { %>
+	  		<div class='col-md-4'>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			  	<a class='figure-link' href="/dishes/<%= dish._id %>">
+					<figure class='dish-figure thumbnail'>
+						<img src="<%= dish.image %>" alt="Dish Image">
+					</figure>
+				</a>
+			  </div>
+			  <div class="panel-body text-center">
+					<p><b> <%= dish.restaurant %>  </b></p>
+					<p><%= dish.title %></p>
+			  </div>
+			  <div class="panel-footer text-center">
+			  		<p><%= dish.created.toDateString() %></p>
+			  </div>
+			</div>
+			</div>
+			<% }) %>
+		</div>
+	  </div>
+
+<% include partials/footer %>

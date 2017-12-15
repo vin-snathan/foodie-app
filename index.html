@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Foodie.to</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+
+	<body>
+		
+	  
+	  		
+	  <div class="container">
+	  	<div class="row" style="display:flex; flex-wrap: wrap">
+	  	<% allDishes.forEach(function(dish) { %>
+			<div class="col-md-3">
+			<a class='figure-link' href="/dishes/<%= dish._id %>">
+				<figure class='dish-figure thumbnail'>
+					<p><b> <%= dish.restaurant %>  </b></p>
+					<figcaption><%= dish.title %></figcaption>
+					<img src="<%= dish.image %>" alt="Dish Image">
+				</figure>
+			</a>
+			</div>
+	  	<% }) %>
+	  	</div>
+	  </div>
+
+
+	  	
+			<div class="col-md-3">
+			<a class='figure-link' href="/dishes/<%= dish._id %>">
+				<figure class='dish-figure thumbnail'>
+					<p><b> <%= dish.restaurant %>  </b></p>
+					<figcaption><%= dish.title %></figcaption>
+					<img src="<%= dish.image %>" alt="Dish Image">
+				</figure>
+			</a>
+			</div>
+	  	
+
+
+	  <div class="container">
+	  	<div class="row" style="display:flex; flex-wrap: wrap">
+	  		<% allDishes.forEach(function(dish) { %>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			  	<a class='figure-link' href="/dishes/<%= dish._id %>">
+					<figure class='dish-figure thumbnail'>
+						<img src="<%= dish.image %>" alt="Dish Image">
+					</figure>
+				</a>
+			  </div>
+			  <div class="panel-body">
+					<p><b> <%= dish.restaurant %>  </b></p>
+					<p><%= dish.title %></p>
+			  </div>
+			  <div class="panel-footer">
+			  		<p><%= dish.createdAt.toDateString() %></p>
+			  </div>
+			</div>
+			<% }) %>
+		</div>
+	  </div>
+
+
+
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</body>
+</html>

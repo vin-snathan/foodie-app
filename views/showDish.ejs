@@ -1,0 +1,60 @@
+<% include partials/header %>
+
+	  <div class="container">
+
+	  	<p><a href="/dishes"><span style='font-size: 16px;' class='glyphicon glyphicon-arrow-left'></span></a> Back </p>
+
+	  	<hr/>
+		
+		<h2><b> <%= foundDish.restaurant %>  </b></h2>
+		<p> <%= foundDish.created.toDateString() %> </p>
+
+	  	<div class="row">
+	  		<div class="col-md-4">
+	  			<figure class='dish-figure thumbnail'>
+					<img src="<%= foundDish.image %>" alt="Dish Image">
+				</figure>
+	  		</div>
+
+	  		<div class="col-md-8">
+	  			<p> Dish: <%= foundDish.title %> </p>
+	  			<p> Description: <%= foundDish.description %> </p>
+	  			<p> Price: $<%= foundDish.price %> </p>
+
+	  			<br/>
+	  			<p><span class='glyphicon glyphicon-user'></span>Submitted by <%= foundDish.author.username %> </p>
+	  			
+	  		</div>
+	  	</div>
+
+	  	<% if (currentUser && foundDish.author.id.equals(currentUser._id)) { %>
+		  	<a class='btn btn-default btn-sm' href='/dishes/<%= foundDish._id %>/edit'> Edit </a>
+
+		  	<form style='display: inline-block' action="/dishes/<%= foundDish._id %>?_method=DELETE" method="POST">
+		  		<button class='btn btn-danger btn-sm'> Delete </button>
+		  	</form>
+	  	<%} %>
+
+	  	<hr/>
+
+	  	<a style='margin-bottom:2rem' class='btn btn-primary btn-sm pull-right' href='/dishes/<%= foundDish._id %>/comments/new'> Comment </a>
+	  	<% foundDish.comments.forEach(function(comment) { %>
+	  		<div class="row">
+	  			<div class='col-md-12'>
+	  				<div class='well'>
+	  					<p><b><%= comment.author.username %></b></p>
+	  					<p><%= comment.content %></p>
+
+	  					<% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+	  						<form action='/dishes/<%= foundDish._id %>/comments/<%= comment._id %>?_method=DELETE' method='POST'>
+	  							<button class='btn btn-xs'> Remove </button>
+	  						</form>
+	  					<% } %>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	<% }) %>
+
+	  </div>
+
+<% include partials/footer %>
